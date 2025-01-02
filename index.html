@@ -4,92 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jindittham Capitals</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-        }
-        .navbar {
-            overflow: hidden;
-            background-color: #333;
-            display: flex;
-            padding: 0 20px;
-        }
-        .navbar a {
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-        .navbar a:hover, .dropdown:hover .dropbtn {
-            background-color: #575757;
-        }
-        .dropdown {
-            float: left;
-            overflow: hidden;
-        }
-        .dropdown .dropbtn {
-            font-size: 16px;
-            border: none;
-            outline: none;
-            color: white;
-            padding: 14px 16px;
-            background-color: inherit;
-            margin: 0;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-        .dropdown-content a {
-            float: none;
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-        }
-        .dropdown-content a:hover {
-            background-color: #ddd;
-        }
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        .content {
-            padding: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="navbar">
-        <a href="index.html">Home</a>
-        <div class="dropdown">
-            <button class="dropbtn">About Us</button>
-            <div class="dropdown-content">
-                <a href="#">Our Vision</a>
-                <a href="#">Our Mission</a>
-                <a href="#">Team</a>
-            </div>
+        <div class="logo">
+            <img src="assets/logo.png" alt="Jindittham Logo">
+            Jindittham Capitals
         </div>
-        <div class="dropdown">
-            <button class="dropbtn">Products</button>
-            <div class="dropdown-content">
-                <a href="equity.html">Equity</a>
-                <a href="#">Mutual Funds</a>
-            </div>
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
         </div>
-        <a href="#">Contact Us</a>
     </div>
 
-    <div class="content">
+    <div class="hero">
         <h1>Welcome to Jindittham Capitals</h1>
-        <p>Your trusted partner in financial growth and wealth management.</p>
+        <p>Your trusted partner in financial growth.</p>
+        <button>Learn More</button>
+    </div>
+
+    <div id="services" class="services">
+        <a href="equity.html" class="card">
+            <h3>Equity</h3>
+            <p>Invest in the ownership of top companies.</p>
+        </a>
+        <a href="mutualfunds.html" class="card">
+            <h3>Mutual Funds</h3>
+            <p>Diversify your portfolio with expert-managed funds.</p>
+        </a>
+        <a href="financialplanning.html" class="card">
+            <h3>Financial Planning</h3>
+            <p>Plan your financial future with us.</p>
+        </a>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 Jindittham Capitals. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
     </div>
 </body>
 </html>
