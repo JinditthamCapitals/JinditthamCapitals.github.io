@@ -3,59 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shashwat Investments</title>
+    <title>Jindittham Capitals</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
         }
-        header {
-            background-color: #0077cc;
-            color: white;
-            padding: 1rem 0;
-            text-align: center;
-        }
-        main {
-            padding: 2rem;
-            text-align: center;
-        }
-        h1 {
-            color: #0077cc;
-        }
-        footer {
+        .navbar {
+            overflow: hidden;
             background-color: #333;
+            display: flex;
+            padding: 0 20px;
+        }
+        .navbar a {
+            float: left;
+            display: block;
             color: white;
             text-align: center;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-        a {
-            color: #0077cc;
+            padding: 14px 16px;
             text-decoration: none;
         }
-        a:hover {
-            text-decoration: underline;
+        .navbar a:hover, .dropdown:hover .dropbtn {
+            background-color: #575757;
+        }
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+        .dropdown .dropbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            margin: 0;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .content {
+            padding: 20px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Shashwat Investments</h1>
-        <p>Helping you make smart investments in stocks and mutual funds</p>
-    </header>
-    <main>
-        <h2>Welcome!</h2>
-        <p>At Shashwat Investments, we are dedicated to guiding you toward smarter financial decisions. Whether you're new to investing or an experienced investor, we're here to help you grow your wealth.</p>
-        <p>Get in touch to learn how we can help you achieve your financial goals!</p>
-        <a href="mailto:contact@shashwatinvestments.com">Email Us</a>
-    </main>
-    <footer>
-        <p>&copy; 2025 Shashwat Investments. All Rights Reserved.</p>
-    </footer>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn">About Us</button>
+            <div class="dropdown-content">
+                <a href="#">Our Vision</a>
+                <a href="#">Our Mission</a>
+                <a href="#">Team</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Products</button>
+            <div class="dropdown-content">
+                <a href="equity.html">Equity</a>
+                <a href="#">Mutual Funds</a>
+            </div>
+        </div>
+        <a href="#">Contact Us</a>
+    </div>
+
+    <div class="content">
+        <h1>Welcome to Jindittham Capitals</h1>
+        <p>Your trusted partner in financial growth and wealth management.</p>
+    </div>
 </body>
 </html>
