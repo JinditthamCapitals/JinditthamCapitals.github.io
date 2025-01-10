@@ -1,0 +1,139 @@
+.calculators-container{
+    padding: 10px;
+}
+.calculator {
+            margin: 10px;
+            background-color: darkgrey;
+            border-radius: 20px;
+            padding: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .sip-calculator {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .sip-calculator .name h2 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .sip-calculator .arrow {
+            font-size: 1.5rem;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .sip-box {
+            display: none;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        .sip-box label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+
+        .sip-box input {
+            width: calc(100% - 20px);
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .sip-box button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .sip-box button:hover {
+            background-color: #0056b3;
+        }
+        
+        .sipChart {
+            display: none; /* Hide chart by default */
+           
+        }
+        .lumpsumChart{
+            display: none;
+        }
+        .chartsip{
+            display: none;
+            height: 400px;  /* Set the desired height */
+        }
+        .chartlp{
+            display: none;
+            height: 400px;
+        }
+        .lumpsum-calculator {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .lumpsum-calculator .name h2 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .lumpsum-calculator .arrow {
+            font-size: 1.5rem;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .lumpsum-box {
+            display: none;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        .lumpsum-box label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+
+        .lumpsum-box input {
+            width: calc(100% - 20px);
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .lumpsum-box button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .lumpsum-box button:hover {
+            background-color: #0056b3;
+        }
+        
+        

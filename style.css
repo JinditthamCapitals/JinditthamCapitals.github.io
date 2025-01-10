@@ -1,85 +1,377 @@
-/* Navbar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #00458A;
-    padding: 10px 20px;
+/* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+ padding: 0;
+ margin: 0;
+ box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  line-height: 1.5;
+
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Navbar */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #001f3d;
+  padding: 10px 20px;
+  transition: background-color 0.3s, padding 0.3s;
+}
+
+.navbar.scrolled {
+  background-color: #00458a; /* Change to a lighter/darker shade or different color */
+  padding: 5px 20px; /* Reduce padding for a more compact look */
+}
 .navbar .logo {
-    display: flex;
-    align-items: center;
-    color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .navbar .logo img {
-    height: 40px;
-    margin-right: 10px;
+  height: 40px;
+  margin-right: 10px;
 }
 
 .navbar .menu {
-    display: flex;
-    gap: 20px;
-    align-items: center;
+  display: flex;
+  gap: 20px;
 }
 
 .navbar .menu a {
-    color: white;
-    padding: 8px 15px;
-    border-radius: 4px;
-    transition: background 0.3s;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 4px;
+  transition: background 0.3s;
 }
 
 .navbar .menu a:hover {
-    background-color: #0066CC;
+  background-color: #0066cc;
+}
+
+/* Hero Section */
+.hero-home {
+  background: url("assets/hero.png") no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  margin: 10px;
+  position: relative;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  border-radius: 15px;
+}
+
+.hero-home h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #f4f4f4;
+}
+
+.hero-equity {
+  background: url("assets/equity.png") no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  margin: 10px;
+  position: center;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  border-radius: 15px;
+   
+}
+
+.hero-equity h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #f4f4f4;
+}
+
+.hero button {
+  background-color: #001f3d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.separator {
+  border: none; /* Removes the default border of <hr> */
+  border-top: 4px solid #00458a; /* Custom color and thickness */
+  margin: 20px 0; /* Spacing around the line */
+  width: 89%; /* Line width relative to the page */
+  margin-left: auto; /* Centers the line horizontally */
+  margin-right: auto;
+}
+
+.text {
+  padding: 10px; /* Add padding for spacing */
+  margin: 20px auto; /* Center the div horizontally with some vertical spacing */
+  width: 92%; /* Make it responsive */
+  max-width: 92%; /* Limit the maximum width */
+}
+
+.text h1 {
+  color: #001f3d; /* A complementary blue color */
+  font-size: 2rem; /* Adjust the font size */
+  margin-bottom: 10px; /* Add spacing below the heading */
+  text-align: left;
+}
+
+.text p {
+  color: #333; /* Darker color for contrast */
+  font-size: 1rem; /* Adjust the font size */
+  line-height: 1.5; /* Improve readability */
+}
+
+/* Services Section */
+.services {
+  display: flex;
+  gap: 20px;
+  padding: 50px 20px;
+  justify-content: center;
+}
+
+.services .card {
+  flex: 1;
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.services .card:hover {
+  transform: scale(1.05);
+}
+
+.services .card h3 {
+  margin-bottom: 15px;
+  color: #00458a;
 }
 
 /* Dropdown */
 .dropdown {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .dropdown .dropbtn {
-    background-color: #00458A;
-    color: white;
-    padding: 8px 15px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s;
+  background-color: #001f3d;
+  color: white;
+  padding: 8px 15px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
-.dropdown .dropbtn:hover {
-    background-color: #0066CC;
-}
- .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 200px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgb(141, 139, 139); /* Light background for contrast */
+  min-width: 200px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
 .dropdown-content a {
-    color: #00458A;
-    padding: 10px 15px;
-    text-decoration: none;
-    display: block;
-    border-bottom: 1px solid #f4f4f4;
+  color: #00458a; /* Dark blue text for better visibility */
+  padding: 1px 5px;
+  text-decoration: none;
+  display: block;
+  border-bottom: 1px solid #f4f4f4;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.dropdown-content a:hover {
-    background-color: #f4f4f4;
-     color: #002D62;
+.dropdown .dropbtn:hover {
+  background-color: #0066cc; /* Set the desired hover background color */
 }
 
-/* Show Dropdown on Hover */
 .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Hero Section */
+/* .hero {
+            background: #00458A;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        } */
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* Services Grid */
+.services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 50px 20px;
+}
+
+.services .card {
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.services .card:hover {
+  transform: scale(1.05);
+}
+
+.services .card h3 {
+  margin-bottom: 15px;
+  color: #00458a;
+}
+
+/* Footer */
+.footer {
+    background-color: #001f3d;
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+  }
+  
+  .footer a {
+    color: #00aaff;
+  }
+  
+  .container {
+    max-width: 1170px;
+    margin: auto;
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+  }
+  
+  .footer-col {
+    width: 25%;
+    padding: 0 15px;
+    text-align: left; /* Align all text to the left */
+  }
+  
+  .footer-col h4 {
+    font-size: 18px;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+  }
+  
+  .footer-col h4::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    background-color: #f4f4f4;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+  }
+  
+  .footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+  }
+  
+  .footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #bbbbbb;
+    text-decoration: none;
+    font-weight: 300;
     display: block;
-} 
+    transition: all 0.3s ease;
+  }
+  
+  .footer-col ul li a:hover {
+    color: #ffffff;
+    padding-left: 8px;
+  }
+  
+  .footer p {
+    margin: 0; /* Ensure paragraphs have no extra margin */
+    line-height: 1.5; /* Make the text look cleaner */
+  }
+  
+  .footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+  }
+  
+  .footer-col .social-links a:hover {
+    color: #24262b;
+    background-color: #ffffff;
+  }
+  
+  .copyright {
+    margin-top: 70px;
+    margin-bottom: -20px;
+    text-align: center; /* Keep copyright text centered */
+  }
+/* responsive */
+
+@media(max-width: 70%){
+    .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
+    }
+    .services{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+
+}
 
