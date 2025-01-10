@@ -37,10 +37,7 @@
         </div>
         <a href="#about">About Us</a>
         <a href="#contact">Contact</a>
-        <a
-          href="https://diy.sharekhan.com/app/Account/Register?grpcd=12191&type=pb&grpid=12618"
-          >Open Demat A/C</a
-        >
+        <a href="https://diy.sharekhan.com/app/Account/Register?grpcd=12191&type=pb&grpid=12618">Open Demat A/C</a>
       </div>
     </div>
 
@@ -54,42 +51,31 @@
           <div class="name"><h2>SIP Calculator</h2></div>
           <span class="arrow material-icons">expand_more</span>
         </div>
-
         <div class="sip-box" id="sipBox">
             <label for="monthlyInvestment">Monthly Investment (₹):</label>
             <input
               type="text"
               id="monthlyInvestment"
-              placeholder="Enter monthly investment"
-            />
+              placeholder="Enter monthly investment"/>
             <label for="annualRate">Annual Rate of Return (%):</label>
             <input
               type="number"
               id="annualRate"
-              placeholder="Enter annual rate of return"
-            />
-
+              placeholder="Enter annual rate of return"/>
             <label for="investmentPeriod">Investment Period (years):</label>
             <input
               type="number"
               id="investmentPeriod"
-              placeholder="Enter investment period"
-            />
-
+              placeholder="Enter investment period"/>
             <button onclick="calculateSip()">Calculate</button>
-
             <p id="totalAmount" style="margin-top: 15px; font-weight: bold"></p>
             <p id="sipResult" style="margin-top: 15px; font-weight: bold"></p>
-            <p
-              id="profitEarned"
-              style="margin-top: 15px; font-weight: bold"
-            ></p>
+            <p id="profitEarned" style="margin-top: 15px; font-weight: bold"></p>
           <div class="chartsip" id="chartsip">
             <canvas id="sipChart"></canvas>
           </div>
         </div>
       </div>
-
       <div class="calculator">
         <div class="lumpsum-calculator" onclick="toggleLumpsumBox()">
           <div class="name"><h2>Lumpsum Calculator</h2></div>
@@ -102,14 +88,12 @@
             id="Investment-lumpsum"
             placeholder="Enter Investemnt Amount"
           />
-
           <label for="annualRate-lumpsum">Annual Rate of Return (%):</label>
           <input
             type="number"
             id="annualRate-lumpsum"
             placeholder="Enter annual rate of return"
           />
-
           <label for="investmentPeriod-lumpsum"
             >Investment Period (years):</label
           >
@@ -118,9 +102,7 @@
             id="investmentPeriod-lumpsum"
             placeholder="Enter investment period"
           />
-
           <button onclick="calculateLumpsum()">Calculate</button>
-
           <p
             id="totalAmount-lumpsum"
             style="margin-top: 15px; font-weight: bold"
@@ -159,13 +141,14 @@
               <li><a href="pms.html">PMS</a></li>
               <li><a href="insurance.html">Insurance</a></li>
               <li><a href="ppm.html">PPM</a></li>
+              <li><a href="calculator.html">Calculators</a></li>
             </ul>
           </div>
           <div class="footer-col">
             <h4>Contact Us</h4>
             <ul>
-              <li><a href="#">Jindittham Capitals</a></li>
-              <li><a href="#">7999705240</a></li>
+              <li>Jindittham Capitals</li>
+              <li>+91-7999705240</li>
               <li>Jaipur</li>
             </ul>
           </div>
@@ -189,7 +172,6 @@
     <script>
       function toggleSipBox() {
         const sipBox = document.getElementById("sipBox");
-
         const sipChart = document.getElementById("sipChart");
 
         if (sipBox.style.display === "block") {
