@@ -56,37 +56,37 @@ function calculateSip() {
   // console.log(investmentPeriod>=30);
   // console.log(investmentPeriod<=1);
 
-  if (investmentPeriod >= 30 || investmentPeriod <= 1) {
-    document.getElementById("sipResult").innerText =
-      "Please enter investment year between 1 to 30";
-    document.getElementById("totalAmount").innerText = "";
-    document.getElementById("profitEarned").innerText = "";
-    document.getElementById("sipChart").style.display = "none";
-    document.getElementById("chartsip").style.display = "none";
+//   if (investmentPeriod > 30 || investmentPeriod <= 1) {
+//     document.getElementById("sipResult").innerText =
+//       "Please enter investment year between 1 to 30";
+//     document.getElementById("totalAmount").innerText = "";
+//     document.getElementById("profitEarned").innerText = "";
+//     document.getElementById("sipChart").style.display = "none";
+//     document.getElementById("chartsip").style.display = "none";
 
-    return;
-  }
-  if (annualRate >= 30 || annualRate <= 5) {
-    document.getElementById("sipResult").innerText =
-      "Please enter expected returns between 5 to 30";
-    document.getElementById("totalAmount").innerText = "";
-    document.getElementById("profitEarned").innerText = "";
-    document.getElementById("sipChart").style.display = "none";
-    document.getElementById("chartsip").style.display = "none";
+//     return;
+//   }
+//   if (annualRate > 30 || annualRate < 5) {
+//     document.getElementById("sipResult").innerText =
+//       "Please enter expected returns between 5 to 30";
+//     document.getElementById("totalAmount").innerText = "";
+//     document.getElementById("profitEarned").innerText = "";
+//     document.getElementById("sipChart").style.display = "none";
+//     document.getElementById("chartsip").style.display = "none";
 
-    return;
-  }
+//     return;
+//   }
 
-  if (monthlyInvestment >= 50000000 || monthlyInvestment <= 100) {
-    document.getElementById("sipResult").innerText =
-      "Please enter investment amount between 100 to 500000000";
-    document.getElementById("totalAmount").innerText = "";
-    document.getElementById("profitEarned").innerText = "";
-    document.getElementById("sipChart").style.display = "none";
-    document.getElementById("chartsip").style.display = "none";
+//   if (monthlyInvestment > 50000000 || monthlyInvestment < 100) {
+//     document.getElementById("sipResult").innerText =
+//       "Please enter investment amount between 100 to 500000000";
+//     document.getElementById("totalAmount").innerText = "";
+//     document.getElementById("profitEarned").innerText = "";
+//     document.getElementById("sipChart").style.display = "none";
+//     document.getElementById("chartsip").style.display = "none";
 
-    return;
-  }
+//     return;
+//   }
 
   const monthlyRate = annualRate / 12 / 100;
   const totalMonths = investmentPeriod * 12;
@@ -199,35 +199,35 @@ function calculateLumpsum() {
     return;
   }
 
-  if (investmentPeriod_lumpsum >= 30 || investmentPeriod_lumpsum <= 1) {
-    document.getElementById("profitEarned-lumpsum").innerText =
-      "Please enter investment year between 1 to 30";
-    document.getElementById("totalAmount-lumpsum").innerText = "";
-    document.getElementById("Result-lumpsum").innerText = "";
-    document.getElementById("lumpsumChart").style.display = "none";
-    document.getElementById("chartlp").style.display = "none";
+//   if (investmentPeriod_lumpsum >= 30 || investmentPeriod_lumpsum <= 1) {
+//     document.getElementById("profitEarned-lumpsum").innerText =
+//       "Please enter investment year between 1 to 30";
+//     document.getElementById("totalAmount-lumpsum").innerText = "";
+//     document.getElementById("Result-lumpsum").innerText = "";
+//     document.getElementById("lumpsumChart").style.display = "none";
+//     document.getElementById("chartlp").style.display = "none";
 
-    return;
-  }
-  if (annualRate_lumpsum >= 30 || annualRate_lumpsum <= 5) {
-    document.getElementById("profitEarned-lumpsum").innerText =
-      "Please enter expected returns between 5 to 30";
-    document.getElementById("totalAmount-lumpsum").innerText = "";
-    document.getElementById("Result-lumpsum").innerText = "";
-    document.getElementById("lumpsumChart").style.display = "none";
-    document.getElementById("chartlp").style.display = "none";
-    return;
-  }
+//     return;
+//   }
+//   if (annualRate_lumpsum >= 30 || annualRate_lumpsum <= 5) {
+//     document.getElementById("profitEarned-lumpsum").innerText =
+//       "Please enter expected returns between 5 to 30";
+//     document.getElementById("totalAmount-lumpsum").innerText = "";
+//     document.getElementById("Result-lumpsum").innerText = "";
+//     document.getElementById("lumpsumChart").style.display = "none";
+//     document.getElementById("chartlp").style.display = "none";
+//     return;
+//   }
 
-  if (Investment_lumpsum >= 50000000 || Investment_lumpsum <= 100) {
-    document.getElementById("profitEarned-lumpsum").innerText =
-      "Please enter investment amount between 100 to 500000000";
-    document.getElementById("totalAmount-lumpsum").innerText = "";
-    document.getElementById("Result-lumpsum").innerText = "";
-    document.getElementById("lumpsumChart").style.display = "none";
-    document.getElementById("chartlp").style.display = "none";
-    return;
-  }
+//   if (Investment_lumpsum >= 50000000 || Investment_lumpsum <= 100) {
+//     document.getElementById("profitEarned-lumpsum").innerText =
+//       "Please enter investment amount between 100 to 500000000";
+//     document.getElementById("totalAmount-lumpsum").innerText = "";
+//     document.getElementById("Result-lumpsum").innerText = "";
+//     document.getElementById("lumpsumChart").style.display = "none";
+//     document.getElementById("chartlp").style.display = "none";
+//     return;
+//   }
 
   const futureValue_lumpsum =
     Investment_lumpsum *
