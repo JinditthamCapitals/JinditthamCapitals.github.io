@@ -61,12 +61,12 @@
             <input
               type="number"
               id="annualRate"
-              placeholder="Enter annual rate of return"/>
+              placeholder="Enter annual rate of return" min="5" max="30"/>
             <label for="investmentPeriod">Investment Period (years):</label>
             <input
               type="number"
               id="investmentPeriod"
-              placeholder="Enter investment period"/>
+              placeholder="Enter investment period" min="1" max="30"/>
             <button onclick="calculateSip()">Calculate</button>
             <p id="totalAmount" style="margin-top: 15px; font-weight: bold"></p>
             <p id="sipResult" style="margin-top: 15px; font-weight: bold"></p>
@@ -93,6 +93,7 @@
             type="number"
             id="annualRate-lumpsum"
             placeholder="Enter annual rate of return"
+            min="5" max="30"
           />
           <label for="investmentPeriod-lumpsum"
             >Investment Period (years):</label
@@ -101,10 +102,10 @@
             type="number"
             id="investmentPeriod-lumpsum"
             placeholder="Enter investment period"
+            min="1" max="30"
           />
           <button onclick="calculateLumpsum()">Calculate</button>
-          <p
-            id="totalAmount-lumpsum"
+          <p id="totalAmount-lumpsum"
             style="margin-top: 15px; font-weight: bold"
           ></p>
           <p
@@ -150,15 +151,16 @@
               <li>Jindittham Capitals</li>
               <li>+91-7999705240</li>
               <li>Jaipur</li>
+              <li>shashwatjdc@gmail.com</li>
             </ul>
           </div>
           <div class="footer-col">
             <h4>follow us</h4>
             <div class="social-links">
-              <a href="#"><i class="fab fa-google"></i></a>
-              <a href="#"><i class="fab fa-youtube"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=shashwatjdc@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a>
+              <a href="https://www.youtube.com/@JINDITTHAMCAPITALS" target="_blank"><i class="fab fa-youtube"></i></a>
+              <a href="https://www.instagram.com/jinditthamcapitals/" target="_blank"><i class="fab fa-instagram"></i></a>
+              <a href="www.linkedin.com/in/shashwat-jain-747b5422b" target="_blank"><i class="fab fa-linkedin"></i></a>
             </div>
           </div>
         </div>
@@ -169,178 +171,6 @@
       </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-    <script>
-      function toggleSipBox() {
-        const sipBox = document.getElementById("sipBox");
-        const sipChart = document.getElementById("sipChart");
-
-        if (sipBox.style.display === "block") {
-          sipBox.style.display = "none";
-          sipChart.style.display = "none"; // Hide chart when toggling off
-          resetSipBox();
-        } else {
-          sipBox.style.display = "block";
-          // sipChart.style.height = "500px";
-          // sipChart.style.width = "400px";
-        }
-      }
-
-      function resetSipBox() {
-        document.getElementById("monthlyInvestment").value = "";
-        document.getElementById("annualRate").value = "";
-        document.getElementById("investmentPeriod").value = "";
-        document.getElementById("totalAmount").innerText = "";
-        document.getElementById("sipResult").innerText = "";
-        document.getElementById("profitEarned").innerText = "";
-        document.getElementById("sipChart").style.display = "none";
-        document.getElementById("chartsip").style.display = "none";
-      }
-
-      // Declare the chart globally so it can be updated instead of recreated every time
-let sipChartInstance;
-let lumpsumChartInstance;
-
-function calculateSip() {
-    const monthlyInvestment = parseFloat(document.getElementById("monthlyInvestment").value);
-    const annualRate = parseFloat(document.getElementById("annualRate").value);
-    const investmentPeriod = parseFloat(document.getElementById("investmentPeriod").value);
-
-    if (isNaN(monthlyInvestment) || isNaN(annualRate) || isNaN(investmentPeriod)) {
-        document.getElementById("sipResult").innerText = "Please enter valid values.";
-        return;
-    }
-
-    const monthlyRate = annualRate / 12 / 100;
-    const totalMonths = investmentPeriod * 12;
-
-    const futureValue =
-        monthlyInvestment *
-        ((Math.pow(1 + monthlyRate, totalMonths) - 1) / monthlyRate) *
-        (1 + monthlyRate);
-
-    document.getElementById("sipResult").innerText = `Future Value: ₹ ${futureValue.toFixed(2)}`;
-    document.getElementById("totalAmount").innerText = `Total Amount: ₹ ${monthlyInvestment * investmentPeriod * 12}`;
-    document.getElementById("profitEarned").innerText = `Profit Earned: ₹ ${(
-        futureValue.toFixed(2) -
-        monthlyInvestment * investmentPeriod * 12
-    ).toFixed(2)}`;
-
-    const totalInvestment = monthlyInvestment * investmentPeriod * 12;
-    const profitEarned = (futureValue.toFixed(2) - monthlyInvestment * investmentPeriod * 12).toFixed(2);
-
-    // Check if the chart already exists, if so, update it instead of creating a new one
-    const ctx = document.getElementById("sipChart");
-    if (sipChartInstance) {
-        sipChartInstance.data.datasets[0].data = [totalInvestment, profitEarned];
-        sipChartInstance.update(); // Update the existing chart
-    } else {
-        // Create a new chart if it does not exist
-        sipChartInstance = new Chart(ctx, {
-            type: "doughnut",
-            data: {
-                labels: ["Invested Amount", "Estimated Return"],
-                datasets: [
-                    {
-                        data: [totalInvestment, profitEarned],
-                        backgroundColor: ["#007bff", "#28a745"],
-                    },
-                ],
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        position: "bottom",
-                    },
-                },
-            },
-        });
-    }
-
-    document.getElementById("sipChart").style.display = "block";
-    document.getElementById("chartsip").style.display = "block";
-}
-
-      function toggleLumpsumBox() {
-        const lumpsum = document.getElementById("lumpsum-box");
-        const lumpsumChart = document.getElementById("lumpsumChart");
-
-        if (lumpsum.style.display === "block") {
-          lumpsum.style.display = "none";
-          lumpsumChart.style.display = "none";
-          resetLumpsumBox();
-        } else {
-          lumpsum.style.display = "block";
-        }
-      }
-
-      function resetLumpsumBox() {
-        document.getElementById("Investment-lumpsum").value = "";
-        document.getElementById("annualRate-lumpsum").value = "";
-        document.getElementById("investmentPeriod-lumpsum").value = "";
-        document.getElementById("totalAmount-lumpsum").innerText = "";
-        document.getElementById("Result-lumpsum").innerText = "";
-        document.getElementById("profitEarned-lumpsum").innerText = "";
-        document.getElementById("lumpsumChart").style.display = "none";
-        document.getElementById("chartlp").style.display = "none";
-      }
-
-      function calculateLumpsum() {
-    const Investment_lumpsum = parseFloat(document.getElementById("Investment-lumpsum").value);
-    const annualRate_lumpsum = parseFloat(document.getElementById("annualRate-lumpsum").value);
-    const investmentPeriod_lumpsum = parseFloat(document.getElementById("investmentPeriod-lumpsum").value);
-
-    if (isNaN(Investment_lumpsum) || isNaN(annualRate_lumpsum) || isNaN(investmentPeriod_lumpsum)) {
-        document.getElementById("profitEarned-lumpsum").innerText = "Please enter valid values.";
-        return;
-    }
-
-    const futureValue_lumpsum =
-        Investment_lumpsum *
-        Math.pow(1 + annualRate_lumpsum / 100, investmentPeriod_lumpsum);
-
-    document.getElementById("Result-lumpsum").innerText = `Future Value: ₹ ${futureValue_lumpsum.toFixed(2)}`;
-    document.getElementById("totalAmount-lumpsum").innerText = `Total Amount: ₹ ${Investment_lumpsum}`;
-    document.getElementById("profitEarned-lumpsum").innerText = `Profit Earned: ₹ ${(
-        futureValue_lumpsum.toFixed(2) - Investment_lumpsum
-    ).toFixed(2)}`;
-
-    const profitEarned_lumpsum = (futureValue_lumpsum.toFixed(2) - Investment_lumpsum).toFixed(2);
-
-    // Check if the chart already exists, if so, update it instead of creating a new one
-    const ctx2 = document.getElementById("lumpsumChart");
-    if (lumpsumChartInstance) {
-        lumpsumChartInstance.data.datasets[0].data = [Investment_lumpsum, profitEarned_lumpsum];
-        lumpsumChartInstance.update(); // Update the existing chart
-    } else {
-        // Create a new chart if it does not exist
-        lumpsumChartInstance = new Chart(ctx2, {
-            type: "doughnut",
-            data: {
-                labels: ["Invested Amount", "Estimated Return"],
-                datasets: [
-                    {
-                        data: [Investment_lumpsum, profitEarned_lumpsum],
-                        backgroundColor: ["#007bff", "#28a745"],
-                    },
-                ],
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        position: "bottom",
-                    },
-                },
-            },
-        });
-    }
-
-    document.getElementById("lumpsumChart").style.display = "block";
-    document.getElementById("chartlp").style.display = "block";
-}
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
